@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CONFERÊNCIA DIGITAL E-SCI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+        }
+        .titulo {
+            background-color: #DCDCDC;
+            padding: 1px;
+        }
+        .corpo {
+            background-color: white;
+            padding: 10px;
+        }
+        .texto {
+            text-align: justify;
+			color: #696969;
+			font-size: 14px;
+        }
+		.texto-tabela {
+            color: #696969;
+			font-size: 12px;
+        }		
+		.texto_tabela_titulo {
+            color: #363636;
+			font-weight: bold;
+        }		
+        .texto-azul {
+            color: blue;
+			font-size: 12px;
+        }		
+		.texto_red {
+            color: red;
+			font-weight: bold;
+        }
+        .input {
+            width: 80%;
+            padding: 5px;
+            margin: 5px 0;
+			align-items: center;
+        }
+		.inner-table {
+            width: 600px;
+            border: 1px solid black;
+        }
+
+        .inner-table input {
+            max-width: 100%;
+            width: 100%;
+        }
+        .botaoLimpar {
+            width: 40%;
+            padding: 10px;
+            background-color: #B22222;
+			align-items: center;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+		.botao {
+            width: 40%;
+            padding: 10px;
+            background-color: #4169E1;
+			align-items: center;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }		
+		.botaoAnexo {
+            width: 100%;
+            padding: 10px;
+            background-color: #4169E1;
+			align-items: center;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }		
+		.botaoDeferido {
+            width: 100%;
+            padding: 10px;
+            background-color: #98FB98;
+			align-items: center;
+            color: #008000;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }	
+        .tabela {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .tabela th, .tabela td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .tabela th {
+            background-color: #f2f2f2;
+        }
+		.botao-container {
+            text-align: center;
+        }	
+		.inner-div {
+            width: 100%;
+            overflow-x: auto;
+        }
+    </style>
+    <script>
+        function limparCampos() {
+            document.getElementById('input1').value = '';
+            document.getElementById('input2').value = '';
+            document.getElementById('input3').value = '';
+        }
+		function recarregarPagina() {
+            location.reload();
+        }	
+		function baixarPDF() {
+            var link = document.createElement('a');
+            link.href = 'HABITE-SE GABRIEL DEZ 2022.pdf';
+            link.download = 'HABITE-SE GABRIEL DEZ 2022.pdf';
+            link.click();
+        }		
+    </script>	
+</head>
+<body>
+    <div class="container">
+        <div class="titulo">
+            <h4>CONFERÊNCIA DIGITAL E-SCI</h4>
+        </div>
+        <div class="corpo">
+            <p class="texto">Neste espaço você pode conferir a veracidade de um atestado emitido pelo sistema e-SCI do Corpo de Bombeiros Militar de Santa Catarina. Forneça o número do RE, protocolo e o número para conferência digital no documento.</p>
+            <p class="texto texto-azul"><a href="https://sigat.cbm.sc.gov.br/sigat/modulos/solicitacoes/acessocidadao2.php" target="_blank">Para realizar a conferência de atestados do SIGAT, clique aqui.</a></p>
+			
+			<p class="texto_red">Registro de Endereço (RE)*</p>
+            <input class="input" id="input1" type="text" value="RE8383000016A">
+			<p class="texto_red">Protocolo*</p>
+            <input class="input" id="input2" type="text" value="H8383001493A">
+			<p class="texto_red">Conferência Digital/Autenticação*</p>
+            <input class="input" id="input3" type="text" value="fcbd4e15544d056cf7762661438abb236aa972fd">
+			<div class="botao-container">
+            <button class="botaoLimpar" align="center" onclick="limparCampos()">Limpar</button>
+			<br>
+            <button class="botao" align="center" onclick="recarregarPagina()">PESQUISAR</button>
+			</div>
+        </div>
+		<div class="inner-div">
+        <table class="tabela">
+            <thead>
+                <tr>
+					<th class="texto_tabela_titulo">RE</th>
+					<th class="texto_tabela_titulo">NOME EDIFICAÇÃO</th>
+					<th class="texto_tabela_titulo">ENDEREÇO</th>
+                    <th class="texto_tabela_titulo">PROTOCOLO</th>
+                    <th class="texto_tabela_titulo">SITUAÇÃO</th>
+                    <th class="texto_tabela_titulo">PDF</th>
+                </tr>
+				<tr>
+					<th><input class="input" type="text"></th>
+					<th><input class="input" type="text"></th>
+					<th><input class="input" type="text"></th>
+                    <th><input class="input" type="text"></th>
+                    <th><input class="input" type="text"></th>
+                    <th>  </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+					<td class="texto-tabela">RE8383000016A</td>
+					<td class="texto-tabela">Cleusa Coradi me</td>
+					<td class="texto-tabela">Ângelo Albino Ferronato, S/N. Primo Tacca. Xanxerê/SC</td>
+                    <td class="texto-tabela">H8383001493A</td>
+                    <td><button class="botaoDeferido" align="center">DEFERIDO</button></td>
+                    <td><button class="botaoAnexo" align="center" onclick="baixarPDF()">Anexos</button></td>
+                </tr>
+            </tbody>
+        </table>
+		</div>
+    </div>
+</body>
+</html>
